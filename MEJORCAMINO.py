@@ -10,24 +10,25 @@ import pandas as pd
 
 st.set_page_config(page_title="EXSA S.A. - Prototipo Matemáticas Discretas")
 
-st.title("🧠 Prototipo - Matemáticas Discretas en Logística de explosivos")
+st.title("Prototipo - Matemáticas Discretas en Producción de explosivos")
 st.markdown("Simulación de decisiones logísticas usando lógica proposicional, álgebra de Boole, relaciones binarias y teoría de grafos.")
 
 # --- Sección 1: Lógica Proposicional y Álgebra de Boole ---
-st.header("1️⃣ Validación de salida de camión (Lógica y Boole)")
+st.header("Validación del produdcto (Lógica y Boole)")
 
-permiso = st.checkbox("✅ Permiso de tránsito")
-ruta_disponible = st.checkbox("✅ Ruta disponible")
-carga = st.slider("📦 Carga (toneladas)", 0, 20, 5)
+permiso = st.checkbox("Conformidad del producto")
+ruta_disponible = st.checkbox("Secuencia disponible")
+carga = st.slider("📦 Carga (PH)", 0, 14, 5)
 capacidad_max = 10
+capacidad_min = 7
 
-puede_salir = permiso and ruta_disponible and (carga <= capacidad_max)
+puede_salir = permiso and ruta_disponible and ( <capacidad_min <= carga <= capacidad_max )
 
 st.write("**Resultado:**", "🟢 Puede salir" if puede_salir else "🔴 No puede salir")
 st.code(f"Salida = Permiso ∧ RutaDisponible ∧ (Carga ≤ CapacidadMax) = {puede_salir}")
 
 # --- Sección 2: Teoría de Grafos ---
-st.header("3️⃣ Mapa de Rutas Logísticas - En minutos (Teoría de Grafos)")
+st.header(" Mapa de Rutas Logísticas - En minutos (Teoría de Grafos)")
 
 G = nx.DiGraph()
 
