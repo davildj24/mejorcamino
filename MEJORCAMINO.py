@@ -22,10 +22,10 @@ carga = st.slider("📦 Carga (PH)", 0, 14, 5)
 capacidad_max = 10
 capacidad_min = 7
 
-puede_salir = permiso and ruta_disponible and ( <capacidad_min <= carga <= capacidad_max )
+puede_salir = permiso and ruta_disponible and ( capacidad_min <= carga <= capacidad_max )
 
 st.write("**Resultado:**", "🟢 Puede salir" if puede_salir else "🔴 No puede salir")
-st.code(f"Salida = Permiso ∧ RutaDisponible ∧ (Carga ≤ CapacidadMax) = {puede_salir}")
+st.code(f"Salida = Permiso ∧ RutaDisponible ∧ ( PHMIN ≤ PH ≤ PHMax) = {puede_salir}")
 
 # --- Sección 2: Teoría de Grafos ---
 st.header(" Mapa de Rutas Logísticas - En minutos (Teoría de Grafos)")
