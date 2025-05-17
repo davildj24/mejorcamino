@@ -53,7 +53,7 @@ try:
     cost = nx.dijkstra_path_length(G, source=source, target=target)
     st.success(f"Ruta más corta: {' → '.join(path)} (Costo: {cost})")
 except nx.NetworkXNoPath:
-    st.error("No hay ruta disponible entre esos almacenes.")
+    st.error("No hay ruta disponible entre estos procesos.")
 
 # Mostrar grafo
 st.subheader("🔍 Vista del grafo")
