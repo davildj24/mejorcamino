@@ -28,7 +28,7 @@ st.write("**Resultado:**", "🟢 Puede salir" if puede_salir else "🔴 No puede
 st.code(f"Salida = Permiso ∧ RutaDisponible ∧ ( PHMIN ≤ PH ≤ PHMax) = {puede_salir}")
 
 # --- Sección 2: Teoría de Grafos ---
-st.header(" Mapa de Rutas Logísticas - En minutos (Teoría de Grafos)")
+st.header(" Mapa de Rutas del proceso - En minutos (Teoría de Grafos)")
 
 G = nx.DiGraph()
 
@@ -39,13 +39,14 @@ G.add_nodes_from(["A", "B", "C", "D", "E"])
 G.add_weighted_edges_from([
     ("A", "B", 60),
     ("A", "C", 20),
+    ("B", "C", 30),
     ("C", "A", 20),
     ("C", "D", 40),
     ("D", "E", 30),
 ])
 
-source = st.selectbox("📍 Selecciona el almacén de origen", G.nodes, index=0)
-target = st.selectbox("🏁 Selecciona el almacén de destino", G.nodes, index=3)
+source = st.selectbox("📍 Selecciona secuencia de origente", G.nodes, index=0)
+target = st.selectbox("🏁 Selecciona secuencia de destino", G.nodes, index=3)
 
 try:
     path = nx.dijkstra_path(G, source=source, target=target)
