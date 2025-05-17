@@ -11,7 +11,7 @@ import pandas as pd
 st.set_page_config(page_title="EXSA S.A. - Prototipo Matemáticas Discretas")
 
 st.title("Prototipo - Matemáticas Discretas en Producción de explosivos")
-st.markdown("Simulación de decisiones logísticas usando lógica proposicional, álgebra de Boole, relaciones binarias y teoría de grafos.")
+st.markdown("Simulación de decisiones logísticas usando lógica proposicional y teoría de grafos.")
 
 # --- Sección 1: Lógica Proposicional y Álgebra de Boole ---
 st.header("Validación del produdcto (Lógica y Boole)")
